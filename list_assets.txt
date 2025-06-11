@@ -1,0 +1,22 @@
+Objects assets:
+https://www.fab.com/listings/a2bebaa0-f109-4dd9-b5b5-5a82ea1e7f87
+https://www.fab.com/listings/ef124dbd-4bd5-4909-8963-6e7751635b19
+https://www.fab.com/listings/66985cc5-13c2-45eb-9b5b-628ef4445a5c
+
+Environment assets:
+Egypt: https://www.unrealengine.com/marketplace/en-US/product/ancient-fantasy-mega-bundle
+Desert: https://www.unrealengine.com/marketplace/en-US/product/photorealistic-desert-landscape
+AmusementPark: https://www.unrealengine.com/marketplace/en-US/product/amusement-park-environment-kit
+Arena: https://www.unrealengine.com/marketplace/en-US/product/ancient-fantasy-mega-bundle
+Racetrack: https://www.unrealengine.com/marketplace/en-US/product/race-track-construction-kit
+Opera: https://www.unrealengine.com/marketplace/en-US/product/opera-house-kit
+Restaurant: https://www.unrealengine.com/marketplace/en-US/product/modern-restaurant
+RuralAustralia: https://www.unrealengine.com/marketplace/en-US/product/rural-australia
+SaltFlats: https://www.unrealengine.com/marketplace/en-US/product/automotive-salt-flats
+BasketBallCourt: https://www.fab.com/listings/1e7768ac-f1e8-4fed-a468-3c080a764125
+PrisonCell: https://www.fab.com/listings/cf043dbd-8746-4fbb-a114-890282dbf7ec
+ParkingGarage: https://www.fab.com/listings/a7ebb22d-0c83-4c54-b12c-4050b559457c
+
+Tools:
+RuntimeVideoRecorder: https://www.fab.com/listings/36bd136b-2942-4403-9428-96a430ca71ee
+MenusystemPro: https://www.fab.com/listings/899d8fd6-ce40-4c4e-aa82-3fce041fe3ce
