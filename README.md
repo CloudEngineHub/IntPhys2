@@ -9,7 +9,7 @@ IntPhys 2
  <a href="https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks">Blog</a>
 </h3>
 
-![IntPhys2 intro image](https://github.com/fairinternal/IntPhys2/blob/e7e2d6a308c3452d0a4390451ae24c6b2d4c5a75/IntPhys2_github.png "IntPhys2 benchmark")
+![IntPhys2 intro image](https://github.com/facebookresearch/IntPhys2/blob/main/IntPhys2_github.png "IntPhys2 benchmark")
 
 IntPhys 2 is a video benchmark designed to evaluate the intuitive physics understanding of deep learning models. Building on the original [IntPhys benchmark](https://intphys.cognitive-ml.fr/), IntPhys 2 focuses on four core principles related to  macroscopic objects: Permanence, Immutability, Spatio-Temporal Continuity, and Solidity. These conditions are inspired by research into intuitive physical understanding emerging during early childhood. IntPhys 2 offers a comprehensive suite of tests, based on the violation of expectation framework, that challenge models to differentiate between possible and impossible events within controlled and diverse virtual environments. Alongside the benchmark, we provide performance evaluations of several state-of-the-art models. Our findings indicate that while these models demonstrate basic visual understanding, they face significant challenges in grasping intuitive physics across the four principles in complex scenes, with most models performing at chance levels (50\%), in stark contrast to human performance, which achieves near-perfect accuracy. This underscores the gap between current models and human-like intuitive physics understanding, highlighting the need for advancements in model architectures and training methodologies.
 
