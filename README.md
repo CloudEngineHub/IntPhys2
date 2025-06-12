@@ -5,7 +5,7 @@ IntPhys 2
 <h3 align="center">
 <a href="https://dl.fbaipublicfiles.com/IntPhys2/IntPhys2.zip">Dataset</a> &nbsp; | &nbsp;
  <a href="https://huggingface.co/datasets/facebook/IntPhys2">Hugging Face</a> &nbsp; | &nbsp;
- <a href="https://ai.meta.com/research/publications/intphys-2-benchmarking-intuitive-physics-understanding-in-complex-synthetic-environments/">Paper</a> &nbsp; | &nbsp;
+ <a href="https://arxiv.org/abs/2506.09849">Paper</a> &nbsp; | &nbsp;
  <a href="https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks">Blog</a>
 </h3>
 
@@ -95,12 +95,13 @@ The use of IntPhys 2 is limited to evaluation purposes, where it can be utilized
 ## Citing IntPhys2
 If you use IntPhys2, please cite:
 ```
-@misc{bordes2025intphys2,
+@misc{bordes2025intphys2benchmarkingintuitive,
       title={IntPhys 2: Benchmarking Intuitive Physics Understanding In Complex Synthetic Environments}, 
       author={Florian Bordes and Quentin Garrido and Justine T Kao and Adina Williams and Michael Rabbat and Emmanuel Dupoux},
       year={2025},
-      eprint={},
+      eprint={2506.09849},
       archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2506.09849}, 
 }
 ```
