@@ -37,7 +37,12 @@ IntPhys2 is available on [Hugging Face](https://huggingface.co/datasets/facebook
 ).
 
 ## Evaluating on the Held-Out set
-We are not releasing the metadata associated with the held-out set to prevent training data contamination, we invite researchers to upload the results in the following [Leaderboard](https://huggingface.co/spaces/facebook/physical_reasoning_leaderboard). The model_answer column in the resulting jsonl file should contain either true if the video is deemed possible by the model or false if it's not possible. 
+We are not releasing the metadata associated with the held-out set to prevent training data contamination, we invite researchers to upload the results in the following [Leaderboard](https://huggingface.co/spaces/facebook/physical_reasoning_leaderboard). The model_answer column in the resulting jsonl file should contain either 1 if the video is deemed possible by the model or 0 if it's not possible. 
+
+The order does not matter since what matter is to have the correct video id in row_id, here is an example of what a line of your jsonl file should looks like:
+`{"data_name": "intphys2", "task": "HeldOut", "row_id": "ed97b1c631746a17ba76af61df949cc9ac5fbaa14bc8f3e1afac1f8cf73d5078", "model_answer": 0} `
+
+So your row_id will just map directly to the ground truth annotation file.
 
 ## Evaluation code for MLLMS
 We provide the code to run evauation with MLLMs in different files. To run open sources model like Qwen-VL 2.5 uisng the hugging face transformers library, you can use the file `IntPhys2_transformers.py`. You just need to specify the dataset path in the variable INTPHYS2_DATA_FOLDER. To run OpenAI models from the official API, you can leverage the file `IntPhys2_openai.py` in which you need to specify your API keys in YOUR_API_KEY, YOUR_API_ENDPOINT variable. Lastly to run Gemini models from the google API, you can use `IntPhys2_google_api.py` and update the YOUR_API_KEY variable.
