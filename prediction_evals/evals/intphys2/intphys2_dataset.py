@@ -78,28 +78,40 @@ class IntPhys2Dataset(torch.utils.data.Dataset):
         data_path,
         frame_step=10,
         transform=None,
+        use_image_dir=False
     ):
     
         self.data_path = data_path
-        labels = pd.read_csv(self.data_path + "/labels.csv")
+        labels = pd.read_csv(self.data_path + "/metadata.csv")
         videos = sorted(list(labels['filename'].unique()))
-        self.videopaths =  sorted([self.data_path +'/Images/'+ vid for vid  in videos if os.path.exists(self.data_path +'/Images/'+ vid )])
+        if use_image_dir:
+            self.videopaths =  sorted([self.data_path +'/Images/'+ vid for vid  in videos if os.path.exists(self.data_path +'/Images/'+ vid )])
+        else:
+            self.videopaths =  sorted([self.data_path +'/'+ vid for vid  in videos if os.path.exists(self.data_path +'/'+ vid )])
 
         self.frame_step = frame_step
         self.transform = transform 
+        self.use_image_dir = use_image_dir
 
     def __getitem__(self, index):
-        frames_all = sorted(os.listdir(self.videopaths[index]))
-        frames_to_load = frames_all[::self.frame_step]
 
-        frames = []
-        for frame in frames_to_load:
-            frame_ = Image.open(f"{self.videopaths[index]}/{frame}")
-            frame_ = torch.Tensor(np.array(frame_))
-            if frame_.size(-1) == 4:
-                frame_ = frame_[...,:-1]
-            frames.append(frame_)
-        frames = torch.stack(frames)
+        if self.use_image_dir:
+            frames_all = sorted(os.listdir(self.videopaths[index]))
+            frames_to_load = frames_all[::self.frame_step]
+    
+            frames = []
+            for frame in frames_to_load:
+                frame_ = Image.open(f"{self.videopaths[index]}/{frame}")
+                frame_ = torch.Tensor(np.array(frame_))
+                if frame_.size(-1) == 4:
+                    frame_ = frame_[...,:-1]
+                frames.append(frame_)
+            frames = torch.stack(frames)
+        else:
+            vr = VideoReader(self.videopaths[index], ctx=cpu(0))
+            frame_indices = np.arange(0, len(vr), self.frame_step)
+            frames = vr.get_batch(frame_indices).asnumpy()
+            frames = torch.from_numpy(frames)
 
         if self.transform:
             frames = self.transform(frames)
@@ -108,8 +120,6 @@ class IntPhys2Dataset(torch.utils.data.Dataset):
         
         name =  torch.Tensor([index])
         return frames,name
-
-
 
     def __len__(self):
         return len(self.videopaths)
