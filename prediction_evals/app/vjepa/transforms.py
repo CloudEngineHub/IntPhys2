@@ -63,11 +63,14 @@ class VideoTransform(object):
             self.mean *= 255.
             self.std *= 255.
 
-        self.autoaug_transform = video_transforms.create_random_augment(
-            input_size=(crop_size, crop_size),
-            auto_augment='rand-m7-n4-mstd0.5-inc1',
-            interpolation='bicubic',
-        )
+        if self.auto_augment:
+            self.autoaug_transform = video_transforms.create_random_augment(
+                input_size=(crop_size, crop_size),
+                auto_augment='rand-m7-n4-mstd0.5-inc1',
+                interpolation='bicubic',
+            )
+        else:
+            self.autoaug_transform = None
 
         self.spatial_transform = video_transforms.random_resized_crop_with_shift \
             if motion_shift else video_transforms.random_resized_crop
